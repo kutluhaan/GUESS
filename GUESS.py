@@ -6,11 +6,11 @@ import time
 number = rnd.randint(1,100)
 
 def intro():
-    print("Merhaba, GUESS'e hoşgeldiniz." + "\n" + "\n")
+    print("Hi, welcome to the GUESS." + "\n" + "\n")
     time.sleep(1)
-    print("Bu programda bilgisayar 1 ile 100 arasında bir sayı belirleyecek, siz ise bulmaya çalışacaksınız."+ "\n" + "\n")
+    print("In this program, the computer will determine a number between 1 and 100, and you will try to find it."+ "\n" + "\n")
     time.sleep(2)
-    print("Hazır mısın?"+ "\n")
+    print("Ready?"+ "\n")
     time.sleep(1.5)
     print("3"+ "\n")
     time.sleep(1)
@@ -18,31 +18,31 @@ def intro():
     time.sleep(1)
     print("1"+ "\n")
     time.sleep(1)
-    print("Başla!"+ "\n")
+    print("GO!"+ "\n")
 
 
-def oyun(number):
-    tahmin = int(input("Tahmininizi girin: "+ "\n"+ "\n"))
-    sayaç = 0
+def game(number):
+    guess = int(input("GUESS: "+ "\n"+ "\n"))
+    counter = 0
     while True:
-        if tahmin != number:
-            if tahmin < number:
-                print("\n"+"Yukarı!"+ "\n"+ "\n")
-                sayaç += 1
+        if guess != number:
+            if guess < number:
+                print("\n"+"Up!"+ "\n"+ "\n")
+                counter += 1
                 time.sleep(0.5)
-                tahmin = int(input("Tahmininizi girin: "+ "\n"+ "\n"))
-            if tahmin > number:
-                print("\n"+"Aşağı!"+ "\n"+ "\n")
-                sayaç += 1
+                guess = int(input("GUESS: "+ "\n"+ "\n"))
+            if guess > number:
+                print("\n"+"Down!"+ "\n"+ "\n")
+                counter += 1
                 time.sleep(0.5)
-                tahmin = int(input("Tahmininizi girin: "+ "\n"+ "\n"))
-            if tahmin != number:
-                if sayaç == 4:
-                    print("\n"+"Bulamadın :D"+ "\n")
-                    print("\n"+ "Sayı: ", number)
+                guess = int(input("GUESS: "+ "\n"+ "\n"))
+            if guess != number:
+                if counter == 4:
+                    print("\n"+"FAIL :D"+ "\n")
+                    print("\n"+ "Number: ", number)
                     break
         else:
-            print("\n"+"Tebrikler, bildiniz!")
+            print("\n"+"Congratulations!")
             break
 intro()
-oyun(number)
+game(number)
